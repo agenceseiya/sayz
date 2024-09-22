@@ -20,7 +20,7 @@ app.get('/auth/google', async (req, res) => {
 // Endpoint to handle Facebook OAuth callback
 app.get('/auth/facebook', async (req, res) => {
   const code = req.query.code;
-  const tokenResponse = await fetch(`https://graph.facebook.com/v10.0/oauth/access_token?client_id=YOUR_FB_CLIENT_ID&redirect_uri=https://sayz-beta.vercel.app/auth/facebook&client_secret=YOUR_FB_CLIENT_SECRET&code=${code}`);
+  const tokenResponse = await fetch(`https://graph.facebook.com/v10.0/oauth/access_token?client_id=FACEBOOK_CLIENT_ID&redirect_uri=https://sayz-beta.vercel.app/auth/facebook&client_secret=FACEBOOK_CLIENT_SECRET&code=${code}`);
   const tokenData = await tokenResponse.json();
   res.json(tokenData); // You should handle the token and use it for further user interactions
 });
